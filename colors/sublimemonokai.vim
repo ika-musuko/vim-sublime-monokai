@@ -76,6 +76,7 @@ fun! s:create_palette_color(color_name, color_data)
   exec 'let g:sublimemonokai_' . a:color_name . ' = a:color_data'
 endf
 
+call s:create_palette_color('none',        { 'gui': 'NONE',    'cterm': 'NONE'})
 call s:create_palette_color('brightwhite', { 'gui': '#FFFFFF', 'cterm': '231' })
 call s:create_palette_color('white',       { 'gui': '#E8E8E3', 'cterm': '252' })
 call s:create_palette_color('black',       { 'gui': '#272822', 'cterm': '234' })
@@ -134,7 +135,7 @@ call s:h('ColorColumn',  {                      'bg': s:lightblack2             
 hi! link Conceal SublimeLightGrey
 call s:h('CursorColumn', {                      'bg': s:lightblack2                            })
 call s:h('CursorLine',   {                      'bg': s:lightblack2                            })
-call s:h('CursorLineNr', { 'fg': s:orange,      'bg': s:lightblack                             })
+call s:h('CursorLineNr', { 'fg': s:orange,      'bg': s:none	                               })
 call s:h('DiffAdd',      { 'fg': s:addfg,       'bg': s:addbg                                  })
 call s:h('DiffChange',   { 'fg': s:changefg,    'bg': s:changebg                               })
 call s:h('DiffDelete',   { 'fg': s:black,       'bg': s:delbg                                  })
@@ -144,12 +145,12 @@ call s:h('ErrorMsg',     { 'fg': s:black,       'bg': s:red,      'format': 'sta
 hi! link FoldColumn SublimeDarkBlack
 call s:h('Folded',       { 'fg': s:warmgrey,    'bg': s:darkblack                              })
 call s:h('IncSearch',    {                                        'format': 'reverse,underline'})
-call s:h('LineNr',       { 'fg': s:grey,        'bg': s:lightblack                             })
+call s:h('LineNr',       { 'fg': s:warmgrey,    'bg': s:none                                   })
 call s:h('MatchParen',   {                                        'format': 'underline'        })
 hi! link ModeMsg SublimeYellow
 hi! link MoreMsg SublimeYellow
 hi! link NonText SublimeLightGrey
-call s:h('Normal',       { 'fg': s:white,       'bg': s:black                                  })
+call s:h('Normal',       { 'fg': s:white,       'bg': s:none                                   })
 call s:h('Pmenu',        { 'fg': s:lightblack,  'bg': s:white                                  })
 call s:h('PmenuSbar',    {                                                                     })
 call s:h('PmenuSel',     { 'fg': s:aqua,        'bg': s:black,    'format': 'reverse,bold'     })
@@ -162,8 +163,8 @@ call s:h('SpellBad',     {                      'bg': s:darkred                 
 call s:h('SpellCap',     {                      'bg': s:darkyellow                             })
 call s:h('SpellLocal',   {                      'bg': s:darkyellow                             })
 call s:h('SpellRare',    {                      'bg': s:darkyellow                             })
-call s:h('StatusLine',   { 'fg': s:warmgrey,    'bg': s:black,    'format': 'reverse'          })
-call s:h('StatusLineNC', { 'fg': s:darkgrey,    'bg': s:warmgrey, 'format': 'reverse'          })
+call s:h('StatusLine',   { 'fg': s:warmgrey,    'bg': s:none,     'format': 'reverse'          })
+call s:h('StatusLineNC', { 'fg': s:darkgrey,    'bg': s:none,     'format': 'reverse'          })
 call s:h('TabLine',      { 'fg': s:white,       'bg': s:darkgrey                               })
 call s:h('TabLineFill',  { 'fg': s:grey,        'bg': s:darkgrey                               })
 call s:h('TabLineSel',   { 'fg': s:black,       'bg': s:white                                  })
@@ -174,7 +175,7 @@ hi! link WarningMsg SublimeRed
 
 " Generic Syntax Highlighting (see reference: 'NAMING CONVENTIONS' at http://vimdoc.sourceforge.net/htmldoc/syntax.html#group-name)
 
-hi! link Comment      SublimeWarmGrey
+hi! link Comment      SublimeGrey
 hi! link Constant     SublimePurple
 hi! link String       SublimeYellow
 hi! link Character    SublimeYellow
